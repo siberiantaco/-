@@ -1,0 +1,28 @@
+<%= provide(:title, "#{@advert.title} | Доска объявлений") %>
+<%= link_to '← На главную', root_url %>
+        <h3><%= @advert.title %></h1>
+<div class="adverts" style="border: 1px #E2E2E2 solid; padding: 15px; border-radius: 10px">
+    
+
+    <div class="content">
+            <%= @advert.content %>
+    </div>
+    <div class="email">
+        <%= @advert.email %>
+    </div>
+    <span class="answers"><%= @advert.created_at.strftime("%d.%m.%Y %H:%M") %> | <b><%= @advert.responses.count %> Ответов</b></span>
+    
+</div>
+
+<ol class="responses"><%= render @responses.reverse %></ol>
+
+<div class="form">
+<%= form_for [@advert, @response] do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <%= f.text_area :content, placeholder: "Написать ответ...", class: 'form-control' %>
+    <%= f.submit "Отправить", class: "btn btn-primary" %>
+</div>    
+    
+<% end %>
+<%= will_paginate @responses  %>

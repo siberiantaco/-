@@ -1,0 +1,141 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+    float: left;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+.form {
+  margin-top: 35px;
+}
+
+input {
+  height: auto !important;
+}
+
+
+/* adverts */
+
+.adverts {
+    list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 5px;
+  }
+}
+
+.responses {
+    list-style: none;
+  padding: 0;
+    margin-left: 20px;
+      margin-right: 20px;
+  li {
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+  }
+}
+
+.email {
+    float: left;
+
+    font-size: 12px;
+    color: $gray-light;
+}
+
+.timestamp {
+    float: center;
+
+    font-size: 12px;
+    color: $gray-light;
+}
+
+.title {
+    text-align: left;
+    
+} 
+
+.content {
+    text-align: justify;
+    
+}
+
+.answers {
+    float: right;
+     font-size: 12px;
+    color: $gray-light;
+    
+}

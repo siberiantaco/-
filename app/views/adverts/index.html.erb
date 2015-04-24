@@ -1,0 +1,17 @@
+<h3>Доска объявлений</h3>
+<%= provide(:title, 'Доска объявлений') %>
+    <%= form_for(@advert) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label 'Заголовок' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_area :content, placeholder: "Написать объявление...", class: 'form-control' %>
+    <%= f.submit "Отправить", class: "btn btn-primary" %>
+    
+    
+<% end %>
+
+<ol class="adverts">
+        <%= render @adverts %>
+    </ol>
+    <%= will_paginate  %>

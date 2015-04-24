@@ -1,0 +1,14 @@
+<li>
+    
+    <div class="title">
+        <%= link_to advert.title, advert %>
+    </div>
+    <div class="content">
+            <%= advert.content %>
+    </div>
+    <span class="email">
+        <%= advert.email %>
+    </span>
+    <span class="answers"><%= advert.created_at.strftime("%d.%m.%Y %H:%M") %> | <b><%= advert.responses.count %> Ответов</b></span>
+    
+</li>
