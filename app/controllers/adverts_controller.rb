@@ -17,7 +17,7 @@ class AdvertsController < ApplicationController
     
     def show
        @advert = Advert.find(params[:id]) 
-       @responses = @advert.responses.paginate(:page => params[:page], :per_page => 4).order('created_at DESC')
+       @responses = @advert.responses.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
        @response = Response.new
     end
     
